@@ -1,0 +1,67 @@
+package view;
+
+public class Variaveis {
+
+	public static void main(String[] args) {
+
+		/*
+		 * ENUNCIADO - Crie e inicie variáveis para guardar as informações abaixo usando os tipos de variáveis 
+		 * de acordo com a forma que achar correto.
+		 * 
+		 * Nome da empresa com no máximo 25 caracteres.
+		 * Total de salários pagos no mês, em uma grande empresa 
+		 * Quantidade de dias de faturamento, normalmente esta informação será fixa e nunca mais alterada 
+		 * Todas as notas de um aluno de uma disciplina 
+		 * Todos os dados de um carro (placa, chassi, modelo, ano, cor, nome do dono) que foi multado. 
+		 * O número de ouro da matemática valor 1.61803...
+		 * Os nomes dos alunos de uma turma com 10 alunos 
+		 * Quantidade de pares de tênis de um armário 
+		 * 
+		 */
+	//===========================================================================================//	
+		//Nome da empresa com no máximo 25 caracteres.
+		String nomeEmpresa = "Linx Stone";
+		System.out.println("Nome da Empresa: " + nomeEmpresa);
+	//===========================================================================================//	
+		//Total de salários pagos no mês, em uma grande empresa
+		double salario1 = 1000;
+		double salario2 = 1000;
+		double totalSalario = salario1 + salario2;
+		System.out.println("Total de Salário: " + totalSalario);
+	//===========================================================================================//		
+		//Quantidade de dias de faturamento, normalmente esta informação será fixa e nunca mais alterada 
+		
+	//===========================================================================================//		
+		//Todas as notas de um aluno de uma disciplina;
+		String m1 = "POO";
+		String m2 = "SO1";
+		
+		System.out.println("Digite o numero da matéria:");
+		
+		if (m1 == "POO") {
+			double n1 = 10;
+			double n2 = 9.8;
+			double n3 = 2.6;
+			double n4 = 1.9;
+			
+			System.out.println("Notas de POO" + mediaF);
+		} else {
+			double n1 = 9.0;
+			double n2 = 4.5;
+			double n3 = 2.9;
+			double n4 = 10;
+		}
+
+		
+		
+	//===========================================================================================//	
+		//Todos os dados de um carro (placa, chassi, modelo, ano, cor, nome do dono) que foi multado
+		String placa = "EUJ-4966";
+		String chassi = "81992120909AK0209";
+		String modelo = "ONIX";
+		int ano = 1910;
+		String cor = "Preto";
+		String dono = "Gabriel";
+	}
+
+}

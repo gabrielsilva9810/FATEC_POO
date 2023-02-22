@@ -1,0 +1,19 @@
+package view;
+
+public class Aluno {
+
+	public void Notas() {
+		double n1 = 10;
+		double n2 = 9.8;
+		double n3 = 2.6;
+		double n4 = 1.9;
+	}
+	
+
+	public void Disciplina() {
+		String m1 = "POO";
+		String m2 = "SO1";
+	}
+	
+}
+

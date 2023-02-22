@@ -1,0 +1,13 @@
+package view;
+
+public class EstouroMemoriaHeap {
+
+	public static void main(String[] args) {
+		
+		//String[] a = new String [100000 * 100000];
+		
+		Pessoa p = new Pessoa(100000 * 100000, null);
+		System.out.print(p);
+	}
+
+}

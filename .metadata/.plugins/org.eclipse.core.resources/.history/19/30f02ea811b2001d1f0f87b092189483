@@ -1,0 +1,40 @@
+package view;
+
+import java.util.ArrayList;
+
+public class Principal {
+
+	public static void main(String[] args) {
+	
+		ArrayList<Integer> test= new ArrayList(11);
+	    int base=3;
+
+	    for(int i=1;i<11;i++){
+	        recursive(base,i,test);
+	    }
+	    String cont;
+		System.out.println("Numeros validos "+ cont);
+	    String inst;
+		System.out.println("Numero de instruções:"+inst);
+		
+}
+		public static int recursive(int base,int numb,ArrayList<Integer> lista){
+		    int inst = inst+1;
+		    if(numb<0 || numb>base-1) return 0;
+		    ArrayList<Integer> newArray=new ArrayList<Integer>(lista.size()+1); 
+		    for(int i=0;i<lista.size();i++)
+		        newArray.add(lista.get(i));
+		    newArray.add(numb);
+		    int cont;
+			cont++;
+
+		    recursive(base,numb-2,newArray);
+		    recursive(base,numb-1,newArray);
+		    recursive(base,numb+1,newArray); 
+		    recursive(base,numb+2,newArray);
+		    return cont;
+		}
+
+
+		}
+}

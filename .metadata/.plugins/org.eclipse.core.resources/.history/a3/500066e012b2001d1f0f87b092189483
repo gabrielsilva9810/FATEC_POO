@@ -1,0 +1,19 @@
+package view;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int x = -1;
+		recursive(x);
+}
+
+	public static void recursive(int x) {
+		if (x == 0) {
+			return;
+		}
+		
+		System.out.println(x);
+		recursive (x - 1);
+	}
+	
+}
