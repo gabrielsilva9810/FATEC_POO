@@ -1,9 +1,0 @@
-package view;
-
-public class Aluno {
-
-	double n1;
-	double n2;
-	double n3;
-	double n4;
-}
