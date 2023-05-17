@@ -26,50 +26,48 @@ public class JogoDaVelha {
 				}
 				mensagem += "\n";
 			}
-
-			int posicao = Integer.parseInt(JOptionPane.showInputDialog(mensagem + "\nEscolha uma posição (1-9):"));
+			
+			int posicao = Integer.parseInt(JOptionPane.showInputDialog(mensagem + "\nEscolha uma posição (1-9)"));
 
 			// VERIFICA SE A POSIÇÃO É VALIDA
-			if (posicao < 1 || posicao > 9) {
-				JOptionPane.showMessageDialog(null, "Posição inválida! Escolha uma posição de 1 a 9.");
+			if(posicao < 1 || posicao > 9) {
+				JOptionPane.showInputDialog(null + "Posição Invalida! Escolha uma posição de 1 a 9");
 				continue;
 			}
-
+			
 			// CALCULA A POSICAO DO TABULEIRO
 			int linha = (posicao - 1) / 3;
 			int coluna = (posicao - 1) % 3;
-
+			
 			// VERIFICA SE A POSICAO JA FOI ESCOLHIDA
-			if (tabuleiro[linha][coluna] == 'X' || tabuleiro[linha][coluna] == 'O') {
-				JOptionPane.showMessageDialog(null, "Posição já escolhida! Escolha outra posição.");
+			if(tabuleiro[linha][coluna] == 'X' || tabuleiro[linha][coluna] == 'O') {
+				JOptionPane.showInputDialog(null + "Posição já escolhida! Escolha outra posição");
 				continue;
 			}
 
 			// PREENCHENDO POSICAO ATUAL DO JOGADOR
-			char simbolo; // char
-			if (jogadorAtual == 1) {
-				simbolo = player1Symbol; // PREENCHE O PLAYER 1 CONFORME SELECIONADO
-				jogadorAtual = 2;
+			char simbolo;
+			if(jogadorAtual == 1) {
+				simbolo = player1Symbol; //X
+				jogadorAtual = 2;			//bolinha
 			} else {
-				simbolo = player2Symbol; // PREENCHE O PLAYER 2 CONFORME SELECIONADO
-				jogadorAtual = 1;
+				simbolo = player2Symbol;	//bolinha
+				jogadorAtual = 1;			//x
 			}
 
 			// COLOCA O SIMBOLO NA POSICAO DIGITADA
 			tabuleiro[linha][coluna] = simbolo;
 
 			// VERIFICA SE HOUVE VENCEDOR OU EMPATE
-			if (verificarVencedor(tabuleiro)) {
-				JOptionPane.showMessageDialog(null, "Jogador " + jogadorAtual + "(" + simbolo + ") venceu o jogo!");
+			if(verificarVencedor(tabuleiro)) {
+				JOptionPane.showInputDialog(null + "Jogador " + jogadorAtual + "(" + simbolo + ") venceu o jogo!");
 				fimDeJogo = true;
-
+				
 			} else if (verificarEmpate(tabuleiro)) {
-				JOptionPane.showMessageDialog(null, "Empate!");
+				JOptionPane.showInputDialog(null + "Empate!");
 				fimDeJogo = true;
 			}
-			
 		}
-
 	}
 
 	// METODO PARA VERIFICAR VENCEDOR
@@ -77,52 +75,66 @@ public class JogoDaVelha {
 
 		for (int i = 0; i < 3; i++) {
 
-			// VERIFICANDO LINHAS
+			// verificar linhas
 			if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][0] == tabuleiro[i][2]) {
 				return true;
 			}
 
-			// VERIFICANDO COLUNAS
+			// verificar colunas
 			if (tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[0][i] == tabuleiro[2][i]) {
 				return true;
 			}
 		}
 
-		// VERIFICANDO DIAGNONAIS -> \\\\\\\\\
-		if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[0][0] == tabuleiro[2][2]) {
+			//verificar diagonais -> \\\\
+			if (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[0][0] == tabuleiro[2][2]) {
 			return true;
+			}
+			//verificar diagonais -> ////
+			if (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[0][2] == tabuleiro[2][0]) {
+				return true;
+			}
+			
+			//PULA EMPATE
+			return false;
 		}
-
-		// VERIFICANDO DIAGONAIS -> /////////
-		if (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[0][2] == tabuleiro[2][0]) {
-			return true;
-		}
-
-		// PULA PARA O EMPATE
-		return false;
-	}
-
-	// METODO PARA VERIFICAR EMPATE
+	
+	// METODO PARA VERIFICAR EMPATE	
 	public boolean verificarEmpate(char[][] tabuleiro) {
 		
 		int cont = 0;
 		
-		for (int linha = 0; linha < 3; linha++) {	
-			for (int coluna = 0; coluna < 3; coluna++) {
-				
-				if (tabuleiro[linha][coluna] == 'X' || tabuleiro[linha][coluna] == 'O') {
-					cont++;
+			for(int linha = 0; linha < 3; linha ++) {
+				for(int coluna = 0; coluna < 3; coluna++) {
 					
-					if(cont == 9) {
+					if(tabuleiro[linha][coluna] == 'X' || tabuleiro[linha][coluna] == 'O') {
+						cont++;
 						
-						//FINAL DO JOGO - MENSAGEM DE EMPATE
-						return true;
+						if(cont == 9) {
+							
+							return true;		//FINAL DO JOGO - MENSAGEM DE EMPATE
+						}
+						
 					}
 				}
 			}
-		}
-
-		//SE NAO DER EMPATE - CONTINUA
-		return false;
+			
+			//SE NAO DER EMPATE - CONTINUAR
+			return false;
 	}
-}
+		
+	}
+
+		
+		
+
+	
+
+	
+	
+	
+	
+	
+	
+	// METODO PARA VERIFICAR EMPATE	
+

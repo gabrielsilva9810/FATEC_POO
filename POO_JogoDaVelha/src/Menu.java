@@ -36,7 +36,21 @@ public class Menu {
 			
 			//EXIBE TABULEIRO NA TELA
 			jogo.fazerJogadas(player1Symbol, player2Symbol);
+			
+			//DESEJA JOGAR NOVAMENTE
+		    int resposta = JOptionPane.showOptionDialog(null, "Deseja jogar novamente?", "Jogo da Velha",
+		        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{"SIM", "NAO"}, "SIM");
+		    
+		    if (resposta == JOptionPane.YES_OPTION) {
+		    	
+		    	// REINICIA O JOGO
+		        jogarNovamente = true;
+		    	
+		    } else {
+		        // ENCERRA O JOGO
+		        JOptionPane.showMessageDialog(null, "Obrigado por jogar!");
+		        System.exit(0);	//FECHA O PROGRAMA
+		    }
 		}
 	}
-
 }
